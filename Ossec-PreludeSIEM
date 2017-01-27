@@ -15,7 +15,8 @@ Liens utiles :
 
 [h]Installation[/h]
 
-Actuellement la version la plus récente du projet est la 1.2.5 mais celle des dépôts de Debian [url=https://packages.debian.org/source/sid/prelude-manager]date de 2012[/url] (1.0.1) donc nous allons devoir compiler Prelude à la main. Voici la liste des 6 composants à installer :
+Actuellement la version la plus récente du projet est la 3.1.0.
+Voici la liste des composants à installer :
 
 [quote]- [b]Prelude Manager[/b] : c'est le module qui traite et centralise les alertes système
 - [b]LibPrelude[/b] : Librairie qui fournie l'API de Prelude
@@ -37,9 +38,9 @@ Ensuite on télécharge l'archive puis on configure la compilation :
 
 [code]
 cd /tmp
-wget --no-check-certificate https://www.prelude-siem.org/attachments/download/351/libprelude-1.2.5.tar.gz
-tar -xzf libprelude-1.2.5.tar.gz
-cd libprelude-1.2.5
+wget --no-check-certificate https://www.prelude-siem.org/attachments/download/721/libprelude-3.1.0.tar.gz
+tar -xzf libprelude-3.1.0.tar.gz
+cd libprelude-3.1.0
 
 ./configure --without-perl --without-lua --with-python=/usr/bin/python2.7
 [/code]
@@ -73,9 +74,9 @@ Ensuite on télécharge l'archive puis on configure la compilation :
 
 [code]
 cd /tmp
-wget --no-check-certificate https://www.prelude-siem.org/attachments/download/352/libpreludedb-1.2.5.tar.gz
-tar -xzf libpreludedb-1.2.5.tar.gz
-cd libpreludedb-1.2.5
+wget --no-check-certificate https://www.prelude-siem.org/attachments/download/722/libpreludedb-3.1.0.tar.gz
+tar -xzf libpreludedb-3.1.0.tar.gz
+cd libpreludedb-3.1.0
 
 # Variable d'environnement obligatoire sinon le linker ne trouvera pas libprelude
 export LD_LIBRARY_PATH=/usr/local/lib
@@ -133,9 +134,9 @@ Ensuite on télécharge l'archive puis on configure la compilation :
 
 [code]
 cd /tmp
-wget --no-check-certificate https://www.prelude-siem.org/attachments/download/356/prelude-manager-1.2.5.tar.gz
-tar -xzf prelude-manager-1.2.5.tar.gz
-cd prelude-manager-1.2.5
+wget --no-check-certificate https://www.prelude-siem.org/attachments/download/726/prelude-manager-3.1.0.tar.gz
+tar -xzf prelude-manager-3.1.0.tar.gz
+cd prelude-manager-3.1.0
 
 ./configure
 [/code]
@@ -160,9 +161,9 @@ Téléchargez l'archive puis lancez l'installateur :
 
 [code]
 cd /tmp
-wget --no-check-certificate https://www.prelude-siem.org/attachments/download/353/prelude-correlator-1.2.5.tar.gz
-tar -xzf prelude-correlator-1.2.5.tar.gz
-cd prelude-correlator-1.2.5
+wget --no-check-certificate https://www.prelude-siem.org/attachments/download/723/prelude-correlator-3.1.0.tar.gz
+tar -xzf prelude-correlator-3.1.0.tar.gz
+cd prelude-correlator-3.1.0
 
 python2.7 setup.py install --record correlator_files.txt
 
@@ -181,10 +182,10 @@ Ensuite on télécharge l'archive puis on configure la compilation :
 
 [code]
 cd /tmp
-wget --no-check-certificate https://www.prelude-siem.org/attachments/download/354/prelude-lml-1.2.5.tar.gz
-wget --no-check-certificate https://www.prelude-siem.org/attachments/download/355/prelude-lml-rules-1.2.5.tar.gz
-tar -xzf prelude-lml-1.2.5.tar.gz
-cd prelude-lml-1.2.5
+wget --no-check-certificate https://www.prelude-siem.org/attachments/download/724/prelude-lml-3.1.0.tar.gz
+wget --no-check-certificate https://www.prelude-siem.org/attachments/download/725/prelude-lml-rules-3.1.0.tar.gz
+tar -xzf prelude-lml-3.1.0.tar.gz
+cd prelude-lml-3.1.0
 
 ./configure
 [/code]
@@ -212,9 +213,9 @@ Téléchargez l'archive puis lancez l'installateur :
 
 [code]
 cd /tmp
-wget --no-check-certificate https://www.prelude-siem.org/attachments/download/357/prewikka-1.2.5.tar.gz
-tar -xzf prewikka-1.2.5.tar.gz
-cd prewikka-1.2.5
+wget --no-check-certificate https://www.prelude-siem.org/attachments/download/727/prewikka-3.1.0.tar.gz
+tar -xzf prewikka-3.1.0.tar.gz
+cd prewikka-3.1.0
 
 python2.7 setup.py install --record prewikka_files.txt --prefix /usr/local
 
@@ -541,8 +542,8 @@ ruleset=/usr/local/etc/prelude-lml/ruleset/pcre.rules
 Tout à l'heure, pendant les étapes de compilation, nous avons téléchargé les règles de détection de Prelude-LML, il ne faut pas oublier de les mettre au bon endroit :
 
 [code]cd /tmp
-tar -xzf prelude-lml-rules-1.2.5.tar.gz
-cd prelude-lml-rules-1.2.5
+tar -xzf prelude-lml-rules-3.1.0.tar.gz
+cd prelude-lml-rules-3.1.0
 cp -r ruleset /usr/local/etc/prelude-lml/[/code]
 
 [h]Ajout des scripts init.d[/h]
@@ -842,7 +843,7 @@ Puis lancez le script d'installation :
 
 Lors de l'installation, répondez à toutes les questions :
 
-[quote]OSSEC HIDS v2.8.1 Script d'installation - [url]http://www.ossec.net[/url]
+[quote]OSSEC HIDS v2.8.3 Script d'installation - [url]http://www.ossec.net[/url]
 
  Vous êtes sur le point d'installer OSSEC HIDS.
  Vous devez avoir une compilateur C préinstallé sur votre système.
