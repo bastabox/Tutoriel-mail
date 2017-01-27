@@ -1,4 +1,4 @@
-[center][b]Installation sécurisée d'un serveur de mail avec Postfix, Dovecot et Rainloop[/b][/center]
+[center][b]Installation sécurisée d'un serveur de mail avec Postfix, Dovecot et [/b][/center]
 
 [center][img]http://i.imgur.com/yukdywZ.png[/img][/center]
 
@@ -37,10 +37,6 @@ Pensez aussi à mettre à jour votre système avant de commencer :
 
 [h]Changelog :[/h]
 
-
-[h]Script d'auto-installation :[/h]
-
-[
 
 [h]Schéma :[/h]
 
@@ -172,12 +168,12 @@ Il faut dans un premier temps télécharger l'archive la plus récente et la dé
 cd /var/www
 
 wget http://downloads.sourceforge.net/project/postfixadmin/postfixadmin/postfixadmin-2.92/postfixadmin-2.92.tar.gz
-tar -xzf postfixadmin-2.92.tar.gz
-mv postfixadmin-2.92 postfixadmin
-rm -rf postfixadmin-2.92.tar.gz
+tar -xzf postfixadmin-3.0.tar.gz
+mv postfixadmin-3.0 postfixadmin
+rm -rf postfixadmin-3.0.tar.gz
 chown -R www-data:www-data postfixadmin
 
-apt-get install php5-imap
+apt-get install php7.0-imap
 [/code]
 
 Editez le fichier de configuration et modifiez les paramètres suivants :
@@ -216,7 +212,7 @@ server {
 
    location ~* \.php$ {
         include       /etc/nginx/fastcgi_params;
-        fastcgi_pass  unix:/var/run/php5-fpm.sock;
+        fastcgi_pass  unix:/var/run/php7.0-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
    }
